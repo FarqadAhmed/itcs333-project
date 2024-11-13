@@ -1,6 +1,5 @@
-try{
+try {
 
 }
-catch{
-    
-}
+catch()
+{}
