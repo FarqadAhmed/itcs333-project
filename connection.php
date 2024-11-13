@@ -1,4 +1,6 @@
 try{
 
 }
-catch
+catch{
+    
+}
