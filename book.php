@@ -38,7 +38,7 @@ $timeslots = $timeslotsStmt->fetchAll(PDO::FETCH_ASSOC);
         <select name="RoomID" required>
             <option value="">Select a room</option>
             <?php foreach ($rooms as $row): ?>
-                <option value="<?php echo htmlspecialchars($row['RoomID']); ?>"><?php echo htmlspecialchars($row['RoomID']); ?></option>
+                <option value="<?php echo $row['RoomID']; ?>"><?php echo $row['RoomID']; ?></option>
             <?php endforeach; ?>
         </select>
 
@@ -46,7 +46,7 @@ $timeslots = $timeslotsStmt->fetchAll(PDO::FETCH_ASSOC);
         <select name="TimeslotID" required>
             <option value="">Select a timeslot</option>
             <?php foreach ($timeslots as $row): ?>
-                <option value="<?php echo htmlspecialchars($row['TimeslotID']); ?>"><?php echo htmlspecialchars($row['TimeslotID']); ?></option>
+             <option value="<?php echo $row['TimeslotID']; ?>"><?php echo $row['TimeslotID']; ?></option>
             <?php endforeach; ?>
         </select>
 
