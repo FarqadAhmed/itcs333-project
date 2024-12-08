@@ -1,6 +1,7 @@
 
 <?php
 require 'connection.php'; 
+require 'booking.php';
 
 
 try {
