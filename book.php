@@ -5,6 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $timeslotID = $_POST['TimeslotID'];
     $bookingDate = $_POST['BookingDate'];
     $email = $_POST['Email'];
+<<<<<<< HEAD
  
     // Check for conflicts
     $stmt = $db->prepare("
@@ -23,6 +24,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      
     }  $stmt->execute([$roomID, $timeslotID, $bookingDate, $email]);
         echo "Booking successful!";
+=======
+
+
+
+try {
+   
+  
+$roomsStmt = $db->query("SELECT RoomID FROM room");
+$rooms = $roomsStmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+$timeslotsStmt = $db->query("SELECT TimeslotID FROM timeslots WHERE is_available = 1");
+$timeslots = $timeslotsStmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $ex) {
+    die("ERROR fetching data: " . htmlspecialchars($ex->getMessage()));
+  }
+>>>>>>> d6a22fc36cc24b2479da1f337dd153a40be92137
 }
  
 $roomsStmt = $db->query("SELECT RoomID FROM rooms");
