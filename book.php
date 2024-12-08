@@ -5,7 +5,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $timeslotID = $_POST['TimeslotID'];
     $bookingDate = $_POST['BookingDate'];
     $email = $_POST['Email'];
-<<<<<<< HEAD
  
     // Check for conflicts
     $stmt = $db->prepare("
@@ -24,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      
     }  $stmt->execute([$roomID, $timeslotID, $bookingDate, $email]);
         echo "Booking successful!";
-=======
+
 }
 
 
