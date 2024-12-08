@@ -1,6 +1,6 @@
 
 <?php
-require 'booking.php'; // Include the database connections
+require 'connection.php'; // Include the database connections
 
 // Fetch available rooms from the first database
 try {
