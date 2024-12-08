@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
   
-$roomsStmt = $db->query("SELECT RoomID FROM room");
-$rooms = $roomsStmt->fetchAll(PDO::FETCH_ASSOC);
+$roomStmt = $db->query("SELECT RoomID FROM room");
+$room = $roomsStmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 $timeslotsStmt = $db->query("SELECT TimeslotID FROM timeslots WHERE is_available = 1");
@@ -55,8 +55,8 @@ $timeslots = $timeslotsStmt->fetchAll(PDO::FETCH_ASSOC);
         <select name="RoomID" required>
             <option >Select a room</option>
             <?php
-            if (count($rooms) > 0):
-                foreach ($rooms as $row): ?>
+            if (count($room) > 0):
+                foreach ($room as $row): ?>
                     <option value="<?php echo $row['RoomID']; ?>" <?php echo (isset($roomID) && $roomID == $row['RoomID']) ? 'selected' : ''; ?>>
                         <?php echo $row['RoomID']; ?>
                     </option>
@@ -69,10 +69,14 @@ $timeslots = $timeslotsStmt->fetchAll(PDO::FETCH_ASSOC);
         <label for="TimeslotID">Timeslot:</label>
         <select name="TimeslotID" required>
             <option value="">Select a timeslot</option>
-            <?php if ($timeslots->num_rows > 0): ?>
-                <?php while ($row = $timeslots->fetch_assoc()): ?>
-                    <option value="<?php echo $row['TimeslotID']; ?>"></option>
-                <?php endwhile; ?>
+            <?php if (count($timeslots) > 0): 
+                foreach ($timeslots as $row): ?>
+                    <option value="<?php echo $row['TimeslotID']; ?>" <?php echo (isset($timeslotID) && $timeslotID == $row['TimeslotID']) ? 'selected' : ''; ?>>
+                        <?php echo $row['TimeslotID']; ?>
+                    </option>
+                <?php endforeach;
+            else: ?>
+                <option disabled>No timeslots available</option>
             <?php endif; ?>
         </select>
  
