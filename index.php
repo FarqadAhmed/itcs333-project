@@ -1,8 +1,8 @@
 
 <?php
-require 'connection.php'; // Include the database connections
+require 'connection.php'; 
 
-// Fetch available rooms from the first database
+
 try {
     $roomStmt = $db1->query("SELECT RoomID, FROM Room");
     $room = $roomStmt->fetchAll(PDO::FETCH_ASSOC);
@@ -10,7 +10,7 @@ try {
     die("ERROR fetching rooms: " . $ex->getMessage());
 }
 
-// Fetch available timeslots from the second database
+
 try {
     $timeslotsStmt = $db2->query("SELECT TimeslotID,  FROM timeslots WHERE is_available = 1");
     $timeslots = $timeslotsStmt->fetchAll(PDO::FETCH_ASSOC);
