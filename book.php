@@ -1,5 +1,6 @@
 <?php
 require 'connection.php';
+require 'booking.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $roomID = $_POST['RoomID'];
