@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 try {
    
   
-$roomsStmt = $db->query("SELECT RoomID, RoomName FROM rooms");
+$roomsStmt = $db->query("SELECT RoomID FROM room");
 $rooms = $roomsStmt->fetchAll(PDO::FETCH_ASSOC);
 
 
