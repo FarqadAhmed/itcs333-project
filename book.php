@@ -1,12 +1,13 @@
 <?php
-require 'booking.php'; // Include the database connections
+require 'connection.php';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $roomID = $_POST['RoomID'];
     $timeslotID = $_POST['TimeslotID'];
     $bookingDate = $_POST['BookingDate'];
     $email = $_POST['Email'];
  
-    // Check for conflicts
+  
     $stmt = $db->prepare("
         SELECT COUNT(*) FROM bookings
         WHERE RoomID = ? AND TimeslotID = ? AND BookingDate = ?");
@@ -16,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($conflictCount > 0) {
         echo "This timeslot is already booked.";
     } else {
-        // Insert booking
+        
         $stmt = $db->prepare("
             INSERT INTO bookings (RoomID, TimeslotID, BookingDate, Email)
             VALUES (?, ?, ?, ?)");
