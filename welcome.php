@@ -24,7 +24,7 @@ h5{
   margin-bottom:150px;
 }
 .container {
-  background-image:url(IT 1.jpg);
+  background-image:url(IT.jpg);
   position:relative;
   width :100%;
   height:540px;
