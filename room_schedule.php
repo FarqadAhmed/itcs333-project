@@ -73,7 +73,7 @@ $schedules = $schedulesStmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<html>
+    <link rel="stylesheet" href="media.css">
 
 <title>Schedule Management</title>
 </head>
@@ -95,5 +95,11 @@ $schedules = $schedulesStmt->fetchAll(PDO::FETCH_ASSOC);
 </form>
 <table border="1">
     <tr>
-        <th>Schedule ID</th>
-        <th>Room</th
+ <th>Schedule ID</th>
+        <th>Room</th>
+    </tr>
+       
+      
+        </table>
+        </body>
+        </html>

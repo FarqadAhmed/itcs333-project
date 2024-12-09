@@ -38,6 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['profile_picture'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Profile Picture</title>
+    <link rel="stylesheet" href="media.css">
 </head>
 <body>
     <h1>Upload Profile Picture</h1>

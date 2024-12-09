@@ -43,6 +43,7 @@ if (isset($_GET['RoomID']) && isset($_GET['TimeslotID']) && isset($_GET['Booking
             margin-right: 10px;
         }
     </style>
+    <link rel="stylesheet" href="media.css">
 </head>
 <body>
     <p><a href="book.php">Back to Booking</a></p>
