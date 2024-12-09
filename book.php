@@ -67,16 +67,12 @@ $timeslots = $timeslotsStmt->fetchAll(PDO::FETCH_ASSOC);
         </select>
  
         <label for="TimeslotID">Timeslot:</label>
-        <select name="TimeslotID" required>
-            <option value="">Select a timeslot</option>
-            <?php if (count($timeslots) > 0): 
-                foreach ($timeslots as $row): ?>
-                    <option value="<?php echo $row['TimeslotID']; ?>" <?php echo (isset($timeslotID) && $timeslotID == $row['TimeslotID']) ? 'selected' : ''; ?>>
-                        <?php echo $row['TimeslotID']; ?>
-                    </option>
-                <?php endforeach;
-            else: ?>
-                <option disabled>No timeslots available</option>
+    <select name="TimeslotID" required>
+        <option value="">Select a timeslot</option>
+        <?php if ($timeslots->num_rows > 0): ?>
+            <?php while ($row = $timeslots->fetch_assoc()): ?>
+                <option value="<?php echo $row['TimeslotID']; ?>"></option>
+            <?php endwhile; ?>
             <?php endif; ?>
         </select>
  
