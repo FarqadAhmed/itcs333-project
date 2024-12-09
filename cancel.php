@@ -1,12 +1,30 @@
 <?php
-require 'connection.php';
+require 'booking.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $bookingID = $_POST['BookingID'];
 
-    $stmt = $pdo->prepare("DELETE FROM bookings WHERE BookingID = ?");
+    
+    $stmt = $db->prepare("
+        SELECT RoomID, TimeslotID, BookingDate FROM bookings WHERE BookingID = ?");
     $stmt->execute([$bookingID]);
-    echo "Booking cancelled!";
+    $bookingDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    
+    if ($bookingDetails) {
+        $roomID = $bookingDetails['RoomID'];
+        $timeslotID = $bookingDetails['TimeslotID'];
+        $bookingDate = $bookingDetails['BookingDate'];
+
+        
+        $stmt = $db->prepare("
+            SELECT COUNT(*) FROM bookings
+            WHERE RoomID = ? AND TimeslotID = ? AND BookingDate = ?");
+        $stmt->execute([$roomID, $timeslotID, $bookingDate]);
+        $conflictCount = $stmt->fetchColumn();
+    } else {
+        echo "No booking found with that ID.";
+    }
 }
 ?>
 
