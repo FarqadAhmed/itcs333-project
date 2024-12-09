@@ -1,5 +1,5 @@
 <?php
-require 'booking.php';
+require 'connection.php';
 if (isset($_GET['RoomID'])) {
     $roomID = $_GET['RoomID'];
     $stmt = $db->prepare("SELECT TimeslotID FROM timeslots  WHERE RoomID = ? AND is_available = 1");
