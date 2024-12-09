@@ -170,6 +170,6 @@ a:hover {
  
         <button type="submit">Book Room</button>
     </form> 
-    <p><a href=" reservation.php">Go to Reservation information</a></p>
+    <p><a href=" reservation.php"> Reservation information</a></p>
 </body>
 </html>
