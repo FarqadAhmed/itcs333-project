@@ -60,6 +60,7 @@ $timeslots = $statement->fetchAll(PDO::FETCH_ASSOC); // Fetch all matching times
 
     <div class="container mt-4 ">
         <div class="row">
+            <!-- Display the room details -->
             <h1>Deparment Of <?= $room['departmentName']; ?></h1>
             <p><strong>Room Number: </strong><?= $room['RoomID']; ?></p>
             <p><strong>Room Type: </strong><?= $room['RoomType']; ?></p>
@@ -67,8 +68,8 @@ $timeslots = $statement->fetchAll(PDO::FETCH_ASSOC); // Fetch all matching times
             <p><strong>Capacity: </strong><?php echo $room['capacity']; ?></p>
             <p><strong>Equipment: </strong><?php echo $room['Equipment']; ?></p>
 
+            <!-- Display the available timeslots for the room -->
             <h2>Available Timeslots</h2>
-
             <?php if ($timeslots): ?>
                 <div class="col-md-4 mb-4">
                     <div class="card">
@@ -82,9 +83,11 @@ $timeslots = $statement->fetchAll(PDO::FETCH_ASSOC); // Fetch all matching times
                         </div>
                     </div>
                 </div>
+                <!-- Button to go back to browse rooms -->
             <button type="button" class="btn btn-outline-dark me-lg-2 me-3 mb-2" data-bs-toggle="modal" data-bs-target="#roomModal">
                 <a href="browse_rooms.php">Back to Room List</a>
             </button>
+            <!-- Button to go to the booking page -->
             <button type="button" class="btn btn-outline-dark me-lg-2 me-3" data-bs-toggle="modal" data-bs-target="#bookingModal">
                 <a href="index.php">For Booking, Clich Here</a>
             </button>
