@@ -75,7 +75,7 @@ $room = $roomsStmt->fetchAll(PDO::FETCH_ASSOC);
     </script>
 </head>
 <body>
-    <h1>Room Booking System</h1>
+    <h1> Bookn A Room </h1>
     <form action="" method="POST">
         <label for="RoomID">Room:</label>
         <select name="RoomID" onchange="fetchTimeslots()" required>
@@ -101,5 +101,6 @@ $room = $roomsStmt->fetchAll(PDO::FETCH_ASSOC);
  
         <button type="submit">Book Room</button>
     </form> 
+    <p><a href="cancel.php">Go to Cancel</a></p>
 </body>
 </html>
