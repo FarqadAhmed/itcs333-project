@@ -48,7 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
             $profile_picture = $target_file;
         } else {
-            echo "Invalid file type. Allowed types: JPEG, PNG, GIF.";
+            echo '<script>
+            alert("Invalid file type. Allowed types: JPEG, PNG, GIF.");
+          </script>';
             exit;
         }
     } elseif ($_FILES['profile_picture']['error'] != UPLOAD_ERR_NO_FILE) {
