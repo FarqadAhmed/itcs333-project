@@ -56,8 +56,15 @@ h5{
       <button type="button" class="btn btn-outline-dark me-lg-2 me-3" data-bs-toggle="modal" data-bs-target="#loginModal">
  <a href="login.php">Login</a>
 </button>
-      <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#RegisterModal">
+      <button type="button" class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#RegisterModal">
       <a href="register.php">Register</a> </button>
+        <!-- admin Dashboard -->
+
+        <button type="button" class="btn btn-outline-dark " data-bs-toggle="modal" data-bs-target="#loginModal">
+
+<a href="Admin.php">admin Dashboard</a>
+
+</button>
 
 </div>
     </div>
