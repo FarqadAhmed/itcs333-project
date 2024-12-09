@@ -51,9 +51,9 @@ if (isset($_POST['email']) && isset($_POST['Password'])) {
             $_SESSION['active_user_email'] = $row['Email'];
             if (isset($_POST['remember']))
             {
-            setcookie('active_user', $_SESSION['active_user'], time() + (15552000)); // 6 أشهر
-            setcookie('active_user_id', $_SESSION['active_user_id'], time() + (15552000)); // 6 أشهر
-            setcookie('active_user_email', $_SESSION['active_user_email'], time() + (15552000)); // 6 أشهر
+            setcookie('active_user', $_SESSION['active_user'], time() + (15552000)); 
+            setcookie('active_user_id', $_SESSION['active_user_id'], time() + (15552000)); 
+            setcookie('active_user_email', $_SESSION['active_user_email'], time() + (15552000)); 
  
             }
             header("Location: browse_rooms.php");
