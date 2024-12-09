@@ -46,6 +46,6 @@ if (isset($_GET['RoomID']) && isset($_GET['TimeslotID']) && isset($_GET['Booking
 </head>
 <body>
     <p><a href="book.php">Back to Booking</a></p>
-    <p><a href="cancel.php">Go to Cancel</a></p>
+    <p><a href="cancel.php"> Cancel</a></p>
 </body>
 </html>
