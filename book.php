@@ -1,5 +1,5 @@
 <?php
-require 'connection.php';
+require 'booking.php';
 if (isset($_GET['RoomID'])) {
     $roomID = $_GET['RoomID'];
     $stmt = $db->prepare("SELECT TimeslotID FROM timeslots  WHERE RoomID = ? AND is_available = 1");
@@ -32,6 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      
     }  $stmt->execute([$roomID, $timeslotID, $bookingDate, $email]);
         echo "Booking successful!";
+
+        header('Location: reservation.php?RoomID=' . $roomID . '&TimeslotID=' . $timeslotID . '&BookingDate=' . $bookingDate . '&Email=' . $email);
+        exit;
 
 }
 $roomsStmt = $db->query("SELECT RoomID FROM room");
@@ -73,6 +76,72 @@ $room = $roomsStmt->fetchAll(PDO::FETCH_ASSOC);
             }
         }
     </script>
+    <style>
+      body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; 
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333; 
+    margin-bottom: 20px;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; 
+    margin: 0 auto; 
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px; 
+    font-weight: bold;
+}
+
+select, input[type="date"], input[type="email"], button {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+
+button {
+    background-color: 	#696969; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; 
+}
+
+button:hover {
+    background-color: #696969; 
+}
+
+p {
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+a {
+    text-decoration: none; 
+    color: #696969; 
+}
+
+a:hover {
+    text-decoration: underline; 
+}
+      
+    </style>
 </head>
 <body>
     <h1> Bookn A Room </h1>
@@ -101,6 +170,6 @@ $room = $roomsStmt->fetchAll(PDO::FETCH_ASSOC);
  
         <button type="submit">Book Room</button>
     </form> 
-    <p><a href="cancel.php">Go to Cancel</a></p>
+    <p><a href=" reservation.php">Go to Reservation information</a></p>
 </body>
 </html>
