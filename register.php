@@ -43,7 +43,7 @@ function RegisterValidation() {
     }
  
     // Validate the role field
-    if (document.registerForm.prole.value === "") {
+    if (document.registerForm.role.value === "") {
         alert("Please enter your role ");
         return false;  
     }
