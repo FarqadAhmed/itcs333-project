@@ -79,23 +79,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
+    <link rel="stylesheet" href="edit.css">
 </head>
 
 <body>
+<div class="profile-card">
+        <div class="image">
+            <img src="<?php echo $user['profile_picture'] ? $user['profile_picture'] : 'user.png'; ?>" alt="Profile Picture" class="profile-img">
+        </div>
     <h1>Edit Profile</h1>
     <form method="post" enctype="multipart/form-data">
-        <label>First Name:</label>
-        <input type="text" name="FName" value="<?php echo $user['FName']; ?>"><br>
-        <label>Last Name:</label>
-        <input type="text" name="LName" value="<?php echo $user['LName'];
-        string: ?>"><br>
-        <label>Email:</label>
-        <input type="email" name="Email" value="<?php echo $user['Email']; ?>"><br>
-        <label>Profile Picture:</label><br>
-        <img src="<?php echo $user['profile_picture'] ? $user['profile_picture'] : 'default.png'; ?>"
-            alt="Profile Picture" style="width:100px; height:100px; border-radius:50%;"><br>
-        <input type="file" name="profile_picture" accept="image/*"><br><br>
-        <button type="submit">Save Changes</button>
+        <label for="FName">First Name:</label>
+        <input type="text" id=FName name="FName" value="<?php echo $user['FName']; ?>"><br>
+        <label for="LName">Last Name:</label>
+        <input type="text" id=LName name="LName" value="<?php echo $user['LName'];string: ?>"><br>
+        <label for="Email" >Email:</label>
+        <input type="email" id="Email" name="Email" value="<?php echo $user['Email']; ?>"><br>
+        <label for="Profile_Picture">Profile Picture:</label><br>
+        <input type="file" id="Profile_Picture" name="profile_picture"  accept="image/*"><br><br>
+        <div class="buttons">
+        <button type="submit" class="button">Save Changes</button>
+        <a href="browse_rooms.php" class="button">Cancel Changes</a>
+            </div>
     </form>
 </body>
 
