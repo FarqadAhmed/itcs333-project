@@ -145,7 +145,7 @@ a:hover {
     </style>
 </head>
 <body>
-    <h1> Bookn A Room </h1>
+    <h1> Book a Room </h1>
     <form action="" method="POST">
         <label for="RoomID">Room:</label>
         <select name="RoomID" onchange="fetchTimeslots()" required>
