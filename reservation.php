@@ -24,24 +24,70 @@ if (isset($_GET['RoomID']) && isset($_GET['TimeslotID']) && isset($_GET['Booking
     <title>Reservation Details</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 10px;
-        }
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; 
+    margin: 0;
+    padding: 20px;
+}
 
-        h1 {
-            color: black;
-        }
+h1 {
+    text-align: center;
+    color: #333; 
+    margin-bottom: 20px; 
+}
 
-        p {
-            margin-bottom: 10px;
-        }
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px; 
+    margin: 0 auto; 
+}
 
-        a {
-            text-decoration: none;
-            color: #696969;
-            margin-right: 10px;
-        }
+label {
+    display: block;
+    margin: 10px 0 5px; 
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+
+button {
+    background-color:#696969; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; 
+    width: 100%;
+}
+
+button:hover {
+    background-color: #c82333; 
+}
+
+p {
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+a {
+    text-decoration: none; 
+    color: #696969; 
+}
+
+a:hover {
+    text-decoration: underline; 
+}
+       
     </style>
     <link rel="stylesheet" href="media.css">
 </head>

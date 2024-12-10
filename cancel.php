@@ -111,6 +111,6 @@ a:hover {
         <button type="submit">Cancel Booking</button>
     </form>
 
-    <p><a href="book.php">Back to Booking</a></p>
+    <p><a href="browse_rooms.php">Back to  Main Page </a></p>
 </body>
 </html>
