@@ -58,21 +58,31 @@ if (isset($_POST['FName'])){
     $fname = $_POST['FName'];
     $lname = $_POST['LName'];
     $id = $_POST['ID'];
-    $email = $_POST['email'];
+    $email = $_POST['email'] ?? '';
     $hpassword =password_hash($_POST['Password'],PASSWORD_DEFAULT);
-    $role =$_POST['role'];
+    $role =$_POST['role'] ?? '';
     $AnyError=false;
 if (isset($_POST['submit'])) {
+  
      // Validate UoB email
-if (
-        ($role == 'student' && !preg_match("/^[0-9]{8,9}@stu\.uob\.edu\.bh$/", $email)) ||
-        ($role == 'doctor' && !preg_match("/^[a-z]+@uob\.edu\.bh$/", $email))
-    ) {
-        $AnyError=True;
+     if (preg_match("/^[0-9]{8,9}@stu\.uob\.edu\.bh$/", $email) || preg_match("/^[a-z]+@uob\.edu\.bh$/", $email)) {
+    
+        if (($role == 'student' && !preg_match("/^[0-9]{8,9}@stu\.uob\.edu\.bh$/", $email)) ||
+            ($role == 'doctor' && !preg_match("/^[a-z]+@uob\.edu\.bh$/", $email))
+        ) {
+            $AnyError = true;
+            echo '<script>
+                alert("Email or role is not valid. Please try again!");
+            </script>';
+        }
+    } else {
         echo '<script>
-        alert("email or role is not valid .. please try again!");
-    </script>';
+            alert("Email not valid. Please try again!");
+        </script>';
+        exit;
     }
+
+
  
         if (!(strlen($id) == 8 || strlen($id) == 9)) {
             $AnyError=True;
