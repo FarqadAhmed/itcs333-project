@@ -31,6 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <!-- Links for google fonts & bootstrap -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cancel Booking</title>
@@ -64,7 +72,7 @@ label {
     font-weight: bold;
 }
 
-input[type="number"] {
+input {
     width: 100%; 
     padding: 10px;
     margin-bottom: 15px;
@@ -87,19 +95,18 @@ button:hover {
     background-color: #c82333; 
 }
 
-p {
-    text-align: center; 
-    margin-top: 20px; 
-}
-
-a {
-    text-decoration: none; 
-    color: #696969; 
-}
-
-a:hover {
-    text-decoration: underline; 
-}
+a{
+            text-decoration : none;
+            color :black;
+        }
+        a:hover{
+            color:white;
+        }
+        h1 , label{
+            font-family: "Parkinsans", sans-serif;  
+            font-optical-sizing: auto;   
+            font-style: normal;
+        }
        
     </style>
 </head>
@@ -108,9 +115,12 @@ a:hover {
     <form action="cancel.php" method="POST">
         <label for="BookingID">Booking ID:</label>
         <input type="number" name="BookingID" required>
-        <button type="submit">Cancel Booking</button>
+        <button type="submit" class="btn btn-outline-dark me-lg-2 me-3 mt-2" data-bs-toggle="modal" data-bs-target="#bookingModal">Cancel Booking</button>
     </form>
 
-    <p><a href="browse_rooms.php">Back to  Main Page </a></p>
+    <button type="button" class="btn btn-outline-dark me-lg-2 me-3 mt-2" data-bs-toggle="modal" data-bs-target="#bookingModal">
+    <a href="browse_rooms.php">Back to  Main Page </a>
+            </button>
+
 </body>
 </html>
