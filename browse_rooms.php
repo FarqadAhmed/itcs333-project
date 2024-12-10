@@ -91,7 +91,9 @@ $rooms = $statement->fetchAll(PDO::FETCH_ASSOC);
                             <!-- Display room type (class or lab) -->
                             <p>Room Type: <?php echo $room['RoomType']; ?></p>
                             <!-- Link to view room details -->
-                            <a href="room_details.php?id=<?php echo $room['RoomID']; ?>">View Details</a>
+                            <button type="button" class="btn btn-outline-dark me-lg-2 me-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <a href="room_details.php?id=<?php echo $room['RoomID']; ?>">View Details</a>
+                            </button>
                         </div>
                     </div>
                 </div>

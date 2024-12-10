@@ -90,7 +90,7 @@ $timeslots = $statement->fetchAll(PDO::FETCH_ASSOC); // Fetch all matching times
             </button>
             <!-- Button to go to the booking page -->
             <button type="button" class="btn btn-outline-dark me-lg-2 me-3" data-bs-toggle="modal" data-bs-target="#bookingModal">
-                <a href="index.php">For Booking, Clich Here</a>
+                <a href="book.php">For Booking, Clich Here</a>
             </button>
         </div>
     </div>

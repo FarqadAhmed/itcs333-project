@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
 
 }
-$roomsStmt = $db->query("SELECT RoomID FROM room");
+$roomsStmt = $db->query("SELECT RoomID FROM rooms");
 $room = $roomsStmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
@@ -145,7 +145,7 @@ a:hover {
     </style>
 </head>
 <body>
-    <h1> Bookn A Room </h1>
+    <h1> Book a Room </h1>
     <form action="" method="POST">
         <label for="RoomID">Room:</label>
         <select name="RoomID" onchange="fetchTimeslots()" required>
